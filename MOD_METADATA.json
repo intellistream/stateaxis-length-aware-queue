@@ -1,0 +1,44 @@
+{
+  "schema_version": "vllm-hust-mod-metadata-v1",
+  "mod_id": "org.vllm-hust.stateaxis-length-aware-queue",
+  "repository": "stateaxis-length-aware-queue",
+  "display_name": "stateaxis-length-aware-queue",
+  "canonical_repository": "https://github.com/intellistream/stateaxis-length-aware-queue",
+  "responsibility": {
+    "organization": "intellistream",
+    "maintainers": [
+      {
+        "name": "Shuhao Zhang (Tony)",
+        "github": "ShuhaoZhangTony"
+      }
+    ],
+    "advisor_status": "not_declared",
+    "advisors": []
+  },
+  "lifecycle": {
+    "status": "experimental",
+    "default_enabled": false,
+    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
+    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+  },
+  "scope": {
+    "mechanism": "length_aware_queue_tiers",
+    "supported_workloads": [],
+    "out_of_scope": [
+      "general performance claims",
+      "automatic inheritance from StateAxis aggregate evidence"
+    ]
+  },
+  "evidence": {
+    "qualification": "unqualified",
+    "latest_result": "evidence/ISSUE19_RELEASE_AUDIT_20260814.md",
+    "index": "EVIDENCE.md",
+    "performance_claims": [
+      {
+        "label": "inconclusive-tested-cell",
+        "scope": "frozen StateAxis source evidence only",
+        "result": "Exactness and lifecycle gates passed without a significant end-to-end benefit."
+      }
+    ]
+  }
+}
