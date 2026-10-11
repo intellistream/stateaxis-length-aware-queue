@@ -1,0 +1,56 @@
+{
+  "schema_version": "stateaxis-research-mod/v1",
+  "mod_id": "org.vllm-hust.stateaxis-length-aware-queue",
+  "version": "0.2.0",
+  "mechanism": {
+    "name": "bounded-length-class-aging-authority",
+    "enabled": true,
+    "telemetry_enabled": true,
+    "authority_enabled": true,
+    "scope": "cold-prefill-no-state",
+    "short_max_tokens": 128,
+    "medium_max_tokens": 512,
+    "aging_ms": 250,
+    "max_queued_requests": 64,
+    "max_queued_tokens": 1048576,
+    "atomic_full_plan_reorder": true,
+    "trace_identity_aligned": true,
+    "stateful_or_decode_fallback": true,
+    "monotonic_clock_fail_closed": true,
+    "fail_closed": true
+  },
+  "host_contract": {
+    "provider": "stateaxis",
+    "api_range": ">=1,<2",
+    "implementation": "statecentric_engine:parse_length_aware_queue_additional_config",
+    "entry_binary": "native_state_engine",
+    "direct_environment_activation": "forbidden",
+    "effect_evidence": [
+      "candidate decision count",
+      "authority application count",
+      "fail-closed fallback count",
+      "preregistered reorder count",
+      "aged promotion count"
+    ]
+  },
+  "qualification": {
+    "performance_qualified": false,
+    "evidence_label": "historical-real-npu-correctness-positive-performance-neutral-or-negative-plus-fresh-ecpa-contract",
+    "scope": "Qwen2.5-14B varied-length cold-prefill queue",
+    "historical_result": {
+      "repetitions_per_arm": 3,
+      "control_requests_per_second": 4.543,
+      "candidate_requests_per_second": 4.511,
+      "candidate_delta_percent": -0.70,
+      "exactness": "passed",
+      "lifecycle": "passed",
+      "candidate_authority_applications_per_run": 51,
+      "fallbacks": 0
+    },
+    "limitations": [
+      "the historical result applies only to the frozen varied-length workload",
+      "the measured throughput delta was negative and not significant",
+      "the active ECPA revision has no fresh repeated real-online result"
+    ]
+  }
+}
