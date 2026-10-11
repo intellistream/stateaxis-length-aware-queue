@@ -16,14 +16,16 @@
     "advisors": []
   },
   "lifecycle": {
-    "status": "experimental",
+    "status": "active_experimental",
     "default_enabled": false,
-    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
-    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+    "activation_contract": "Manifest 0.3 activation is owned by vLLM-HUST Extension Manager/ECPA. StateAxis accepts only the exact version 0.2.0 research-manifest hash and reviewed bounded cold-prefill length-class/aging policy.",
+    "rollback_contract": "Disable or forget the extension in Extension Manager configuration. StateAxis then retains its unchanged control scheduler and zero MOD identity/effect counters."
   },
   "scope": {
     "mechanism": "length_aware_queue_tiers",
-    "supported_workloads": [],
+    "supported_workloads": [
+      "Qwen2.5-14B varied-length cold-prefill queue with short, medium and long prompts"
+    ],
     "out_of_scope": [
       "general performance claims",
       "automatic inheritance from StateAxis aggregate evidence"
@@ -31,13 +33,13 @@
   },
   "evidence": {
     "qualification": "unqualified",
-    "latest_result": "evidence/ISSUE19_RELEASE_AUDIT_20260814.md",
+    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
       {
-        "label": "inconclusive-tested-cell",
-        "scope": "frozen StateAxis source evidence only",
-        "result": "Exactness and lifecycle gates passed without a significant end-to-end benefit."
+        "label": "historical-real-npu-correctness-positive-performance-neutral-or-negative-plus-fresh-ecpa-contract",
+        "scope": "frozen Qwen2.5-14B varied-length cold-prefill workload",
+        "result": "Historical 3+3 real-NPU runs were exact with zero fallback, but candidate throughput was about 0.70% lower. The fresh ECPA contract is non-performance evidence."
       }
     ]
   }

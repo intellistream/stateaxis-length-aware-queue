@@ -1,0 +1,79 @@
+{
+  "schema_version": "stateaxis-mod-on-off/v1",
+  "date_utc": "2026-10-11",
+  "mod_id": "org.vllm-hust.stateaxis-length-aware-queue",
+  "mod_version": "0.2.0",
+  "research_manifest_sha256": "5495597b61706511618b0044a277a58506a5d6ad0cdfdb65f1566c5762677f60",
+  "evidence_label": "historical-real-npu-correctness-positive-performance-neutral-or-negative-plus-fresh-ecpa-contract",
+  "performance_qualified": false,
+  "host": {
+    "repository": "Qixin-Gaoke/stateaxis",
+    "pull_request": 513,
+    "merge_commit": "78c593481ae2a18e128e7b092e703fdea4496d30",
+    "activation_mode": "active_experimental",
+    "direct_environment_activation_rejected": true,
+    "assembly_and_state_graph_identity_bound": true,
+    "effect_counters": [
+      "decisions_total",
+      "authority_applied",
+      "authority_fallbacks",
+      "preregistered_reorders",
+      "aged_promotions"
+    ]
+  },
+  "manager": {
+    "provider": "stateaxis",
+    "manifest_schema": "0.3-experimental",
+    "check": "passed_with_expected_experimental_degradation",
+    "plan": "passed",
+    "dry_run": "passed",
+    "managed_assembly_check_process": "passed"
+  },
+  "matched_runtime": {
+    "off_identity": null,
+    "off_effect_counts": 0,
+    "on_identity_bound": true,
+    "on_long_tokens": 900,
+    "on_short_tokens": 4,
+    "on_authority_applied": true,
+    "on_preregistered_reorder": true,
+    "on_fallbacks": 0,
+    "requests_completed": 2,
+    "lifecycle_shutdown": "passed"
+  },
+  "matched_assembly": {
+    "off_fingerprint_sha256": "3b96e6b1f7498d5adaccd6591a2077285689718c1ca15348fb1a8463f3653425",
+    "on_fingerprint_sha256": "7a234dbaac1c83436c0918cffc9363d8c7ea47dbefe0c51edf97b83fb203d97f"
+  },
+  "historical_real_npu_result": {
+    "hardware_execution": true,
+    "model": "Qwen2.5-14B",
+    "workload": "issue19-varied-length-20260812-r1",
+    "repetitions_per_arm": 3,
+    "control_requests_per_second": 4.543,
+    "candidate_requests_per_second": 4.511,
+    "candidate_delta_percent": -0.70,
+    "exactness": "passed",
+    "lifecycle": "passed",
+    "candidate_authority_applications_per_run": 51,
+    "fallbacks": 0,
+    "peak_hbm": "effectively unchanged"
+  },
+  "validation": {
+    "python_tests": "2 passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "rust_library_tests": "424 passed",
+    "cargo_check_lib_bins": "passed",
+    "matched_runtime_on_off": "passed",
+    "matched_assembly_on_off": "passed",
+    "extension_manager_check_plan_dry_run": "passed",
+    "managed_assembly_check_process": "passed",
+    "direct_environment_rejection": "passed"
+  },
+  "limitations": [
+    "the historical result applies only to the frozen varied-length workload",
+    "the historical candidate throughput delta was negative and not significant",
+    "the active ECPA revision has no fresh repeated real-online result"
+  ]
+}
