@@ -1,0 +1,14 @@
+{
+  "version": "issue19-varied-length-20260812-r1",
+  "status": "completed_with_scope_note",
+  "oracle_exact_double_run": true,
+  "embedding_exact_double_run": true,
+  "48_layer_exact_double_run": true,
+  "control_candidate_output_exact_1plus1": true,
+  "native_layer_exact": "not_observable",
+  "native_layer_exact_blocker": "frozen native HTTP protocol returns output token/state lifecycle only; it exports no embedding or per-layer activation hash",
+  "reused_existing_3plus3": true,
+  "reran_3plus3": false,
+  "r4_evidence_untouched": true,
+  "performance_claim": false
+}

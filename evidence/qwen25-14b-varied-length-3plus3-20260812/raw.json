@@ -1,0 +1,521 @@
+{
+  "schema": "issue19-varied-length-r1-summary-v1",
+  "version": "issue19-varied-length-20260812-r1",
+  "identity": {
+    "version": "issue19-varied-length-20260812-r1",
+    "not_r4": true,
+    "image": "quay.io/ascend/vllm-ascend:v0.23.0rc1-openeuler",
+    "device": "NPU7",
+    "model_manifest_sha256": "a361693076e1f8e073711796b40269973396ad4b7ed4373a57bf9b6eafdc1912",
+    "prompt_family_sha256": "700dc637ef036fec524463832c430c2ef5c7fde4f74710236aed9c838602aae5",
+    "oracle_run1_sha256": "1a4dfb33267817cc7ad842c483e5538a8d3d8460f450f7bb9a9d3e0d54a2493a",
+    "oracle_run2_sha256": "1a4dfb33267817cc7ad842c483e5538a8d3d8460f450f7bb9a9d3e0d54a2493a",
+    "oracle_roots_equal": true,
+    "binary_sha256": "16d7298cf6d8429db69a289ede857b90f57e7b8b956565ef34ce7b56e43c6081",
+    "execution_config_sha256": "319dc9566466868e779d69cd994fa75dbfa1bfba50feec87871b418558ddf2ad",
+    "rows": {
+      "short": 14,
+      "medium": 225,
+      "long": 897
+    },
+    "oracle_outputs": {
+      "short": [
+        576
+      ],
+      "medium": [
+        1084
+      ],
+      "long": [
+        16
+      ]
+    },
+    "runtime_note": "HTTP protocol path used varied token_ids and paired generation oracles; standalone startup full-oracle remains the existing verified worker startup fixture and is recorded by execution_config_sha256."
+  },
+  "oracle_double_run": {
+    "run1": ".benchmarks/issue19-varied-length-20260812-r1/oracle_run1.json",
+    "run2": ".benchmarks/issue19-varied-length-20260812-r1/oracle_run2.json",
+    "exact": true
+  },
+  "runs": [
+    {
+      "mode": "control",
+      "repeat": 1,
+      "dir": ".benchmarks/issue19-varied-length-20260812-r1-control-r1",
+      "exact": true,
+      "identity_mismatch_count": 0,
+      "by_class": {
+        "short": {
+          "request_count": 17,
+          "ttft_ms": {
+            "count": 17,
+            "p50": 85.868223,
+            "p95": 695.6548143999999,
+            "max": 911.268176
+          },
+          "wait_ms": {
+            "count": 51,
+            "p50": 122.0,
+            "p95": 667.0,
+            "max": 874
+          },
+          "oracle_tokens": [
+            [
+              576
+            ]
+          ]
+        },
+        "medium": {
+          "request_count": 18,
+          "ttft_ms": {
+            "count": 18,
+            "p50": 108.92048,
+            "p95": 892.3213169499999,
+            "max": 971.50607
+          },
+          "wait_ms": {
+            "count": 70,
+            "p50": 180.0,
+            "p95": 762.6499999999996,
+            "max": 907
+          },
+          "oracle_tokens": [
+            [
+              1084
+            ]
+          ]
+        },
+        "long": {
+          "request_count": 16,
+          "ttft_ms": {
+            "count": 16,
+            "p50": 176.5009055,
+            "p95": 1119.6546815,
+            "max": 1203.879512
+          },
+          "wait_ms": {
+            "count": 67,
+            "p50": 304.0,
+            "p95": 906.0,
+            "max": 1085
+          },
+          "oracle_tokens": [
+            [
+              16
+            ]
+          ]
+        }
+      },
+      "raw_request_count": 115,
+      "hbm_used_max_bytes": 55224619008,
+      "hbm_used_min_bytes": 55223685120,
+      "hbm_drift_bytes": 933888,
+      "throughput_completed_per_s": 4.513646674187219,
+      "authority_applied": 0,
+      "fallbacks": 0,
+      "rebuilds": 0,
+      "stale_pops": 0,
+      "decisions": 199
+    },
+    {
+      "mode": "control",
+      "repeat": 2,
+      "dir": ".benchmarks/issue19-varied-length-20260812-r1-control-r2",
+      "exact": true,
+      "identity_mismatch_count": 0,
+      "by_class": {
+        "short": {
+          "request_count": 17,
+          "ttft_ms": {
+            "count": 17,
+            "p50": 85.768037,
+            "p95": 666.2996245999997,
+            "max": 978.048495
+          },
+          "wait_ms": {
+            "count": 44,
+            "p50": 105.5,
+            "p95": 741.7000000000002,
+            "max": 939
+          },
+          "oracle_tokens": [
+            [
+              576
+            ]
+          ]
+        },
+        "medium": {
+          "request_count": 18,
+          "ttft_ms": {
+            "count": 18,
+            "p50": 108.8415005,
+            "p95": 1058.7868453499998,
+            "max": 1215.495947
+          },
+          "wait_ms": {
+            "count": 79,
+            "p50": 188.0,
+            "p95": 942.2999999999998,
+            "max": 1151
+          },
+          "oracle_tokens": [
+            [
+              1084
+            ]
+          ]
+        },
+        "long": {
+          "request_count": 16,
+          "ttft_ms": {
+            "count": 16,
+            "p50": 176.0686295,
+            "p95": 995.9323032499999,
+            "max": 1156.461785
+          },
+          "wait_ms": {
+            "count": 65,
+            "p50": 188.0,
+            "p95": 816.0,
+            "max": 1028
+          },
+          "oracle_tokens": [
+            [
+              16
+            ]
+          ]
+        }
+      },
+      "raw_request_count": 115,
+      "hbm_used_max_bytes": 55224504320,
+      "hbm_used_min_bytes": 55223828480,
+      "hbm_drift_bytes": 675840,
+      "throughput_completed_per_s": 4.557086538086347,
+      "authority_applied": 0,
+      "fallbacks": 0,
+      "rebuilds": 0,
+      "stale_pops": 0,
+      "decisions": 195
+    },
+    {
+      "mode": "control",
+      "repeat": 3,
+      "dir": ".benchmarks/issue19-varied-length-20260812-r1-control-r3",
+      "exact": true,
+      "identity_mismatch_count": 0,
+      "by_class": {
+        "short": {
+          "request_count": 17,
+          "ttft_ms": {
+            "count": 17,
+            "p50": 85.702437,
+            "p95": 798.0675909999998,
+            "max": 1016.333095
+          },
+          "wait_ms": {
+            "count": 57,
+            "p50": 198.0,
+            "p95": 712.7999999999998,
+            "max": 978
+          },
+          "oracle_tokens": [
+            [
+              576
+            ]
+          ]
+        },
+        "medium": {
+          "request_count": 18,
+          "ttft_ms": {
+            "count": 18,
+            "p50": 108.680702,
+            "p95": 564.3871845999992,
+            "max": 1070.392511
+          },
+          "wait_ms": {
+            "count": 55,
+            "p50": 145.0,
+            "p95": 776.8999999999996,
+            "max": 1012
+          },
+          "oracle_tokens": [
+            [
+              1084
+            ]
+          ]
+        },
+        "long": {
+          "request_count": 16,
+          "ttft_ms": {
+            "count": 16,
+            "p50": 176.25799949999998,
+            "p95": 1036.2118142499999,
+            "max": 1195.055068
+          },
+          "wait_ms": {
+            "count": 76,
+            "p50": 288.0,
+            "p95": 863.0,
+            "max": 1068
+          },
+          "oracle_tokens": [
+            [
+              16
+            ]
+          ]
+        }
+      },
+      "raw_request_count": 115,
+      "hbm_used_max_bytes": 55224442880,
+      "hbm_used_min_bytes": 55223816192,
+      "hbm_drift_bytes": 626688,
+      "throughput_completed_per_s": 4.558034782797603,
+      "authority_applied": 0,
+      "fallbacks": 0,
+      "rebuilds": 0,
+      "stale_pops": 0,
+      "decisions": 197
+    },
+    {
+      "mode": "candidate",
+      "repeat": 1,
+      "dir": ".benchmarks/issue19-varied-length-20260812-r1-candidate-r1",
+      "exact": true,
+      "identity_mismatch_count": 0,
+      "by_class": {
+        "short": {
+          "request_count": 17,
+          "ttft_ms": {
+            "count": 17,
+            "p50": 86.168289,
+            "p95": 633.8508557999999,
+            "max": 801.775207
+          },
+          "wait_ms": {
+            "count": 45,
+            "p50": 213.0,
+            "p95": 578.3999999999999,
+            "max": 765
+          },
+          "oracle_tokens": [
+            [
+              576
+            ]
+          ]
+        },
+        "medium": {
+          "request_count": 18,
+          "ttft_ms": {
+            "count": 18,
+            "p50": 109.01838599999999,
+            "p95": 922.6421578999999,
+            "max": 971.671336
+          },
+          "wait_ms": {
+            "count": 79,
+            "p50": 281.0,
+            "p95": 798.0,
+            "max": 909
+          },
+          "oracle_tokens": [
+            [
+              1084
+            ]
+          ]
+        },
+        "long": {
+          "request_count": 16,
+          "ttft_ms": {
+            "count": 16,
+            "p50": 176.59934700000002,
+            "p95": 1118.63766125,
+            "max": 1206.451091
+          },
+          "wait_ms": {
+            "count": 64,
+            "p50": 281.0,
+            "p95": 908.0,
+            "max": 1087
+          },
+          "oracle_tokens": [
+            [
+              16
+            ]
+          ]
+        }
+      },
+      "raw_request_count": 115,
+      "hbm_used_max_bytes": 55224774656,
+      "hbm_used_min_bytes": 55223795712,
+      "hbm_drift_bytes": 978944,
+      "throughput_completed_per_s": 4.510302223139666,
+      "authority_applied": 51,
+      "fallbacks": 0,
+      "rebuilds": 0,
+      "stale_pops": 0,
+      "decisions": 198
+    },
+    {
+      "mode": "candidate",
+      "repeat": 2,
+      "dir": ".benchmarks/issue19-varied-length-20260812-r1-candidate-r2",
+      "exact": true,
+      "identity_mismatch_count": 0,
+      "by_class": {
+        "short": {
+          "request_count": 17,
+          "ttft_ms": {
+            "count": 17,
+            "p50": 85.977035,
+            "p95": 846.7627461999999,
+            "max": 921.812811
+          },
+          "wait_ms": {
+            "count": 62,
+            "p50": 271.0,
+            "p95": 782.8999999999995,
+            "max": 880
+          },
+          "oracle_tokens": [
+            [
+              576
+            ]
+          ]
+        },
+        "medium": {
+          "request_count": 18,
+          "ttft_ms": {
+            "count": 18,
+            "p50": 109.016097,
+            "p95": 901.8663086999999,
+            "max": 976.858407
+          },
+          "wait_ms": {
+            "count": 64,
+            "p50": 271.0,
+            "p95": 818.0499999999998,
+            "max": 913
+          },
+          "oracle_tokens": [
+            [
+              1084
+            ]
+          ]
+        },
+        "long": {
+          "request_count": 16,
+          "ttft_ms": {
+            "count": 16,
+            "p50": 176.589881,
+            "p95": 1128.7726440000001,
+            "max": 1215.4899
+          },
+          "wait_ms": {
+            "count": 62,
+            "p50": 326.5,
+            "p95": 913.0,
+            "max": 1093
+          },
+          "oracle_tokens": [
+            [
+              16
+            ]
+          ]
+        }
+      },
+      "raw_request_count": 115,
+      "hbm_used_max_bytes": 55224500224,
+      "hbm_used_min_bytes": 55223517184,
+      "hbm_drift_bytes": 983040,
+      "throughput_completed_per_s": 4.514056991873392,
+      "authority_applied": 51,
+      "fallbacks": 0,
+      "rebuilds": 0,
+      "stale_pops": 0,
+      "decisions": 199
+    },
+    {
+      "mode": "candidate",
+      "repeat": 3,
+      "dir": ".benchmarks/issue19-varied-length-20260812-r1-candidate-r3",
+      "exact": true,
+      "identity_mismatch_count": 0,
+      "by_class": {
+        "short": {
+          "request_count": 17,
+          "ttft_ms": {
+            "count": 17,
+            "p50": 86.050451,
+            "p95": 1034.4837883999999,
+            "max": 1202.625242
+          },
+          "wait_ms": {
+            "count": 65,
+            "p50": 233.0,
+            "p95": 954.0,
+            "max": 1167
+          },
+          "oracle_tokens": [
+            [
+              576
+            ]
+          ]
+        },
+        "medium": {
+          "request_count": 18,
+          "ttft_ms": {
+            "count": 18,
+            "p50": 109.3327705,
+            "p95": 972.4862959499999,
+            "max": 1048.326299
+          },
+          "wait_ms": {
+            "count": 60,
+            "p50": 172.5,
+            "p95": 898.0,
+            "max": 987
+          },
+          "oracle_tokens": [
+            [
+              1084
+            ]
+          ]
+        },
+        "long": {
+          "request_count": 16,
+          "ttft_ms": {
+            "count": 16,
+            "p50": 176.633281,
+            "p95": 970.33529875,
+            "max": 1171.198456
+          },
+          "wait_ms": {
+            "count": 63,
+            "p50": 233.0,
+            "p95": 885.6999999999998,
+            "max": 1044
+          },
+          "oracle_tokens": [
+            [
+              16
+            ]
+          ]
+        }
+      },
+      "raw_request_count": 115,
+      "hbm_used_max_bytes": 55224680448,
+      "hbm_used_min_bytes": 55224090624,
+      "hbm_drift_bytes": 589824,
+      "throughput_completed_per_s": 4.5095515948884835,
+      "authority_applied": 51,
+      "fallbacks": 0,
+      "rebuilds": 0,
+      "stale_pops": 0,
+      "decisions": 200
+    }
+  ],
+  "acceptance": {
+    "all_six_completed": true,
+    "all_exact": true,
+    "identity_set_mismatch_zero": true,
+    "fallback_zero": true
+  }
+}

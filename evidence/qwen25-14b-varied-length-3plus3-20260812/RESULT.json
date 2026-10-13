@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "format": "stateaxis-length-aware-queue-historical-3plus3-result-v1",
+  "evidence_label": "historical_matched_real_npu_workload_scoped_negative",
+  "performance_claim": false,
+  "speedup_claim": false,
+  "workload": {
+    "model": "Qwen2.5-14B",
+    "device": "Ascend NPU7",
+    "image": "quay.io/ascend/vllm-ascend:v0.23.0rc1-openeuler",
+    "prompt_tokens": {"short": 14, "medium": 225, "long": 897},
+    "requests_per_run": 51,
+    "repetitions_per_arm": 3,
+    "fresh_process_per_run": true
+  },
+  "activation": {
+    "control_authority_applications_per_run": [0, 0, 0],
+    "candidate_authority_applications_per_run": [51, 51, 51],
+    "candidate_fallbacks_per_run": [0, 0, 0]
+  },
+  "correctness": {
+    "six_runs_exact": true,
+    "identity_mismatch_count": 0,
+    "lifecycle_passed": true,
+    "oracle_double_run_exact": true
+  },
+  "throughput_requests_per_second": {
+    "control_runs": [4.513646674187219, 4.557086538086347, 4.558034782797603],
+    "candidate_runs": [4.510302223139666, 4.514056991873392, 4.5095515948884835],
+    "control_mean": 4.542922665023723,
+    "candidate_mean": 4.511303603300514,
+    "candidate_mean_delta_percent": -0.6960070433654097,
+    "paired_run_deltas_percent": [-0.07409642998154053, -0.9442336864426526, -1.0636862204759567],
+    "paired_delta_mean_percent": -0.6940054456333833,
+    "paired_delta_95_percent_t_interval": [-2.035859788361641, 0.6478488970948744],
+    "interpretation": "negative point estimate; three-pair interval crosses zero, so no statistically resolved benefit or regression is claimed"
+  },
+  "peak_hbm_mib": {
+    "control_runs": [52666.30078125, 52666.19140625, 52666.1328125],
+    "candidate_runs": [52666.44921875, 52666.1875, 52666.359375],
+    "control_mean": 52666.208333333336,
+    "candidate_mean": 52666.33203125
+  },
+  "identity": {
+    "model_manifest_sha256": "a361693076e1f8e073711796b40269973396ad4b7ed4373a57bf9b6eafdc1912",
+    "prompt_family_sha256": "700dc637ef036fec524463832c430c2ef5c7fde4f74710236aed9c838602aae5",
+    "binary_sha256": "16d7298cf6d8429db69a289ede857b90f57e7b8b956565ef34ce7b56e43c6081",
+    "execution_config_sha256": "319dc9566466868e779d69cd994fa75dbfa1bfba50feec87871b418558ddf2ad"
+  },
+  "limitations": [
+    "this is historical evidence for the frozen r1 binary and workload, not a fresh run of the active ECPA revision",
+    "the frozen native HTTP protocol did not export per-layer activation hashes",
+    "the workload is a short/medium/long cold-prefill mixture and does not establish behavior for other queue compositions",
+    "the original closure forbids repeating the identical workload; a revisit requires a materially different queue composition and new identity"
+  ]
+}
