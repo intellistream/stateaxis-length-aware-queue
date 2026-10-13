@@ -32,15 +32,15 @@
     ]
   },
   "evidence": {
-    "qualification": "unqualified",
-    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
+        "qualification": "historical_matched_real_npu_negative_active_revision_unqualified",
+        "latest_result": "evidence/qwen25-14b-varied-length-3plus3-20260812/RESULT.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
       {
         "label": "historical-real-npu-correctness-positive-performance-neutral-or-negative-plus-fresh-ecpa-contract",
         "scope": "frozen Qwen2.5-14B varied-length cold-prefill workload",
-        "result": "Historical 3+3 real-NPU runs were exact with zero fallback, but candidate throughput was about 0.70% lower. The fresh ECPA contract is non-performance evidence."
-      }
+                "result": "Historical 3+3 real-NPU runs were exact with zero fallback and 51 candidate authority applications per run. Mean throughput was 4.542923 control versus 4.511304 candidate (-0.6960%); the paired 95% t interval [-2.0359%, +0.6478%] crosses zero. The fresh ECPA contract is non-performance evidence."
+            }
     ]
   }
 }

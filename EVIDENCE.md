@@ -2,6 +2,10 @@
 
 ## Active revision
 
+- `evidence/qwen25-14b-varied-length-3plus3-20260812/RESULT.json`: frozen
+  Qwen2.5-14B 3+3 matched real-NPU result, raw data and derived statistics.
+  Candidate authority activated in every request; throughput point estimate is
+  -0.6960% and the three-pair interval crosses zero.
 - `evidence/ecpa-contract-20261011/RESULT.json`: Manifest 0.3 manager contract,
   managed assembly check and matched runtime ON/OFF identity/effect evidence.
 
@@ -13,4 +17,6 @@
 - `evidence/on-off-preflight-20261010/RESULT.json`: import-only preflight from
   before active ECPA integration, retained for audit history.
 
-No evidence in this repository supports a general performance benefit.
+No evidence in this repository supports a general performance benefit. The
+frozen varied-length cell is a workload-scoped negative point estimate; the
+active ECPA revision remains performance-unqualified.

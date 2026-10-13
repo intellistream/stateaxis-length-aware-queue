@@ -1,0 +1,82 @@
+{
+  "version": "issue19-varied-length-20260812-r1",
+  "not_r4": true,
+  "image": "quay.io/ascend/vllm-ascend:v0.23.0rc1-openeuler",
+  "device": "NPU7",
+  "model_manifest_sha256": "a361693076e1f8e073711796b40269973396ad4b7ed4373a57bf9b6eafdc1912",
+  "prompt_family_sha256": "700dc637ef036fec524463832c430c2ef5c7fde4f74710236aed9c838602aae5",
+  "oracle_run1_sha256": "1a4dfb33267817cc7ad842c483e5538a8d3d8460f450f7bb9a9d3e0d54a2493a",
+  "oracle_run2_sha256": "1a4dfb33267817cc7ad842c483e5538a8d3d8460f450f7bb9a9d3e0d54a2493a",
+  "oracle_roots_equal": true,
+  "binary_sha256": "16d7298cf6d8429db69a289ede857b90f57e7b8b956565ef34ce7b56e43c6081",
+  "execution_config_sha256": "319dc9566466868e779d69cd994fa75dbfa1bfba50feec87871b418558ddf2ad",
+  "rows": {
+    "short": 14,
+    "medium": 225,
+    "long": 897
+  },
+  "oracle_outputs": {
+    "short": [
+      576
+    ],
+    "medium": [
+      1084
+    ],
+    "long": [
+      16
+    ]
+  },
+  "runtime_note": "HTTP protocol path used varied token_ids and paired generation oracles; standalone startup full-oracle remains the existing verified worker startup fixture and is recorded by execution_config_sha256.",
+  "extension": "hidden-state-oracle-r1",
+  "hidden_oracle_run1_sha256": "f118eac8278cfc482e3fd6a071acf08afc854e5ead635fc5503ccb389d24d654",
+  "hidden_oracle_run2_sha256": "f118eac8278cfc482e3fd6a071acf08afc854e5ead635fc5503ccb389d24d654",
+  "hidden_oracle_roots_equal": true,
+  "hidden_rows": [
+    {
+      "class": "short",
+      "tokens": 14,
+      "embedding_exact": true,
+      "layers": 48,
+      "layer_exact": true,
+      "output_exact": true,
+      "run1_embedding_sha256": "a7347d849b6e68e5270be62b48a8076861dfd5b237e007a16efd282b9fb9d96e",
+      "run2_embedding_sha256": "a7347d849b6e68e5270be62b48a8076861dfd5b237e007a16efd282b9fb9d96e",
+      "run1_layer_root_sha256": "0fd748c4876a03baa8ceef18ac4ccf77a64f9b61a62f090d4d79d0dd4a6869c2",
+      "run2_layer_root_sha256": "0fd748c4876a03baa8ceef18ac4ccf77a64f9b61a62f090d4d79d0dd4a6869c2",
+      "oracle_output": [
+        576
+      ]
+    },
+    {
+      "class": "medium",
+      "tokens": 225,
+      "embedding_exact": true,
+      "layers": 48,
+      "layer_exact": true,
+      "output_exact": true,
+      "run1_embedding_sha256": "e86f04c5c26ad44fb0f1af8cadc9505d3e86d9686870a8141aaec7e5cab0e3e6",
+      "run2_embedding_sha256": "e86f04c5c26ad44fb0f1af8cadc9505d3e86d9686870a8141aaec7e5cab0e3e6",
+      "run1_layer_root_sha256": "a622b9761b142236944dc893c8ded6bbf38ecf234d915d5076b5478fba37dbeb",
+      "run2_layer_root_sha256": "a622b9761b142236944dc893c8ded6bbf38ecf234d915d5076b5478fba37dbeb",
+      "oracle_output": [
+        1084
+      ]
+    },
+    {
+      "class": "long",
+      "tokens": 897,
+      "embedding_exact": true,
+      "layers": 48,
+      "layer_exact": true,
+      "output_exact": true,
+      "run1_embedding_sha256": "6bb29dc2396e50cce23eb7c47dc9b1ab06f14e3d738a9b844d3fa46711e83702",
+      "run2_embedding_sha256": "6bb29dc2396e50cce23eb7c47dc9b1ab06f14e3d738a9b844d3fa46711e83702",
+      "run1_layer_root_sha256": "77f03e597450b1b3dbcd429a33e549fb3377cd1cb0a541fc1e8a425b804a3959",
+      "run2_layer_root_sha256": "77f03e597450b1b3dbcd429a33e549fb3377cd1cb0a541fc1e8a425b804a3959",
+      "oracle_output": [
+        16
+      ]
+    }
+  ],
+  "native_layer_observability": "not_exported_by_frozen_native_protocol; no native layer hash is asserted"
+}

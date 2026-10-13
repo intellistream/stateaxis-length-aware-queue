@@ -39,12 +39,15 @@ zero.
 Historical Qwen2.5-14B varied-length real-NPU evidence contains three fresh
 process runs per arm. Exactness and lifecycle passed, candidate authority
 applied 51 times per run, and fallback remained zero. Mean throughput was
-4.543 requests/s control versus 4.511 candidate, approximately `-0.70%`.
-Therefore no speedup is claimed and the mechanism remains opt-in.
+4.542923 requests/s control versus 4.511304 candidate (`-0.6960%`). The three
+paired deltas have a 95% Student-t interval of `[-2.0359%, +0.6478%]`, so the
+experiment resolves no benefit and retains a negative point estimate. Peak HBM
+was effectively unchanged. Therefore no speedup is claimed and the mechanism
+remains opt-in.
 
 The active ECPA revision adds matched process/runtime evidence but no fresh
-accelerator performance run. See [EVIDENCE.md](EVIDENCE.md) and
-`evidence/ecpa-contract-20261011/RESULT.json`.
+accelerator performance run. Raw historical bytes and the derived statistical
+record are now local to this repository. See [EVIDENCE.md](EVIDENCE.md).
 
 ## Validate
 
